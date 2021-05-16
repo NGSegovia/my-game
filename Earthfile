@@ -1,15 +1,14 @@
-FROM gcc:latest
+FROM barichello/godot-ci:latest
 WORKDIR /my-game
 
 build:
     COPY src src
-    COPY Makefile Makefile
-    RUN make
-    RUN make run
-    RUN make install
-    SAVE ARTIFACT bin /bin AS LOCAL build/bin
+    RUN mkdir -v -p build
+    RUN cd src && mkdir web && godot --export HTML5 web/index.html && mv web ../build
+    RUN ls -lah . src build build/web
+    SAVE ARTIFACT build  AS LOCAL build
 
 docker:
-    COPY +build/bin bin
+    COPY +build/web web
     ENTRYPOINT ["/my-game/bin/hello"]
     SAVE IMAGE ngs-mygame:latest
