@@ -53,7 +53,7 @@ jobs:
     container:
       image: docker://barichello/godot-ci:3.2.1
     steps:
-      - name: Cache build
+    - name: Cache build
       id: cache-build
       uses: actions/cache@v2
       with:
