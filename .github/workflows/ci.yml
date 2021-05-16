@@ -53,16 +53,16 @@ jobs:
     container:
       image: docker://barichello/godot-ci:3.2.1
     steps:
-     - name: Cache build
+      - name: Cache build
       id: cache-build
       uses: actions/cache@v2
       with:
         path: build
         key: ${{ runner.os }}-build
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v1
-        with:
-          name: web
-          path: ./build/web/
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v1
+      with:
+        name: web
+        path: ./build/web/
 
     
