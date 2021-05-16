@@ -48,6 +48,7 @@ jobs:
     
 
   export-web:
+    needs: build
     name: Web Export
     runs-on: ubuntu-latest
     container:
