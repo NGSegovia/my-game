@@ -8,6 +8,11 @@ on:
   pull_request:
     branches: [ main ]
 
+
+env:
+  GODOT_VERSION: 3.3.1
+  EXPORT_NAME: my-game
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -26,11 +31,18 @@ jobs:
           branch="${GITHUB_REF##*/}"
         fi
         git checkout -b "$branch" || true
-    - name: Docker Login
-      run: docker login --username "$DOCKERHUB_USERNAME" --password "$DOCKERHUB_TOKEN"
+    #- name: Docker Login
+    #  run: docker login --username "$DOCKERHUB_USERNAME" --password "$DOCKERHUB_TOKEN"
     - name: Download latest earthly
       run: "sudo /bin/sh -c 'wget https://github.com/earthly/earthly/releases/download/v0.5.11/earthly-linux-amd64 -O /usr/local/bin/earthly && chmod +x /usr/local/bin/earthly'"
     - name: Earthly version
       run: earthly --version
     - name: Run build
       run: earthly --push +build
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@4.1.3
+      with:
+        BRANCH: gh-pages # The branch the action should deploy to.
+        FOLDER: build/web # The folder the action should deploy.
+
+    
