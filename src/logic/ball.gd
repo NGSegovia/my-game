@@ -1,3 +1,4 @@
+class_name ball
 extends Area2D
 
 const DEFAULT_SPEED = 100
