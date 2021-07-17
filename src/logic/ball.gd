@@ -1,7 +1,7 @@
 class_name ball
 extends Area2D
 
-const DEFAULT_SPEED = 100
+const DEFAULT_SPEED = 300
 
 var direction = Vector2.LEFT
 

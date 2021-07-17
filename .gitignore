@@ -1,2 +1,6 @@
 build/
 logs/
+
+.DS_Store
+
+src/.import

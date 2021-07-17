@@ -1,0 +1,66 @@
+Godot Engine v3.3.stable.official - https://godotengine.org
+OpenGL ES 2.0 Renderer: AMD Radeon Pro 560 OpenGL Engine
+OpenGL ES Batching: ON
+ 
+Registered camera FaceTime HD Camera (Built-in) with id 1 position 0 at index 0
+----------------------------------------------------------------------------------------------
+ GdUnit3 Comandline Tool
+
+Disabled fail fast!
+Scanning for test suites in: /Volumes/data/work/zaleos/git/pets/2021Q2/my-game/src/test
+Scanning for test suites in: /Volumes/data/work/zaleos/git/pets/2021Q2/my-game/src/test/logic
+ERROR: 'The function 'is_equal()' returns a value, but this value is never used.'
+Run Test Suite res://test/logic/ballTest.gd 
+	Run Test: res://test/logic/ballTest.gd > test_reset :STARTED
+
+Debugger Break, Reason: 'Invalid set index 'Position2D' (on base: 'GDScript') with value of type 'Vector2'.'
+*Frame 0 - res://test/logic/ballTest.gd:12 in function 'before_test'
+Enter "help" for assistance.
+debug> Error: Invalid command, enter "help" for assistance.
+debug> Error: Invalid command, enter "help" for assistance.
+debug> Error: Invalid command, enter "help" for assistance.
+debug> 
+Debugger Break, Reason: 'Invalid set index 'Position2D' (on base: 'GDScript') with value of type 'Vector2'.'
+*Frame 0 - res://test/logic/ballTest.gd:12 in function 'before_test'
+Enter "help" for assistance.
+debug> 
+Debugger Break, Reason: 'Invalid set index 'Position2D' (on base: 'GDScript') with value of type 'Vector2'.'
+*Frame 0 - res://test/logic/ballTest.gd:12 in function 'before_test'
+Enter "help" for assistance.
+debug> Error: Invalid command, enter "help" for assistance.
+debug> Built-In Debugger command list:
+
+	c,continue		 Continue execution.
+	bt,backtrace		 Show stack trace (frames).
+	fr,frame <frame>:	 Change current frame.
+	lv,locals		 Show local variables for current frame.
+	mv,members		 Show member variables for "this" in frame.
+	gv,globals		 Show global variables.
+	p,print <expr>		 Execute and print variable in expression.
+	s,step			 Step to next line.
+	n,next			 Next line.
+	fin,finish		 Step out of current frame.
+	br,break [source:line]	 List all breakpoints or place a breakpoint.
+	delete [source:line]:	 Delete one/all breakpoints.
+	set [key=value]:	 List all options, or set one.
+	q,quit			 Quit application.
+debug> *Frame 0 - res://test/logic/ballTest.gd:12 in function 'before_test'
+ Frame 1 - res://addons/gdUnit3/src/core/GdUnitExecutor.gd:130 in function 'test_before'
+ Frame 2 - res://addons/gdUnit3/src/core/GdUnitExecutor.gd:181 in function 'execute_test_case'
+ Frame 3 - res://addons/gdUnit3/src/core/GdUnitExecutor.gd:261 in function 'execute'
+ Frame 4 - res://./addons/gdUnit3/bin/GdUnitCmdTool.gd:71 in function '_process'
+debug> 
+Debugger Break, Reason: 'Error setting property 'position' with value of type Nil.'
+*Frame 0 - res://logic/ball.gd:18 in function 'reset'
+Enter "help" for assistance.
+debug> 
+Debugger Break, Reason: 'Invalid type in function 'is_equal' in base 'Reference (GdUnitIntAssertImpl.gd)'. Cannot convert argument 1 from Nil to int.'
+*Frame 0 - res://test/logic/ballTest.gd:21 in function 'test_reset'
+Enter "help" for assistance.
+debug> 	Run Test: res://test/logic/ballTest.gd > test_reset :PASSED 42s 599ms
+PASSED 42s 600ms
+	| 1 total | 0 error | 0 failed | 0 skipped | 0 orphans |
+
+Total time 42s 600ms
+Open Report at: file:///Volumes/data/work/zaleos/git/pets/2021Q2/my-game/src/reports/report_1/index.html
+Exit code: 0

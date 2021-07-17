@@ -9,6 +9,7 @@ var _test_data :ball
 
 func before_test():
    _test_data = ball.new()
+   ball._initial_pos = Vector2( 0, 0 )
 
 func test_reset() -> void:
 	# Given a ball instance
@@ -18,3 +19,6 @@ func test_reset() -> void:
 	
 	# THEN speed is set to default
 	assert_int(ball.DEFAULT_SPEED).is_equal(_test_data._speed)
+
+func after_test():
+   _test_data.free()
