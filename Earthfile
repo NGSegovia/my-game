@@ -12,3 +12,10 @@ docker:
     COPY +build/web web
     ENTRYPOINT ["/my-game/bin/hello"]
     SAVE IMAGE ngs-mygame:latest
+
+
+build-module:
+    COPY src src
+    RUN git submodule update --init
+    RUN cd godot-cpp && scons platform=osx generate_bindings=yes -j4
+    RUN scons platform=osx

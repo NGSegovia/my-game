@@ -19,6 +19,8 @@ godot_headers_path = "godot-cpp/godot-headers/"
 cpp_bindings_path = "godot-cpp/"
 cpp_library = "libgodot-cpp"
 
+dep_libs = "TurboActivate"
+
 # only support 64 at this time..
 bits = 64
 
@@ -94,8 +96,8 @@ cpp_library += '.' + str(bits)
 
 # make sure our binding library is properly includes
 env.Append(CPPPATH=['.', godot_headers_path, cpp_bindings_path + 'include/', cpp_bindings_path + 'include/core/', cpp_bindings_path + 'include/gen/'])
-env.Append(LIBPATH=[cpp_bindings_path + 'bin/'])
-env.Append(LIBS=[cpp_library])
+env.Append(LIBPATH=[cpp_bindings_path + 'bin/', "src/bin/osx"])
+env.Append(LIBS=[cpp_library, dep_libs])
 
 # tweak this if you want to use different folders, or more folders, to store your source code in.
 env.Append(CPPPATH=['src/'])
