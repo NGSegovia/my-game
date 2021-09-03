@@ -96,11 +96,11 @@ cpp_library += '.' + str(bits)
 
 # make sure our binding library is properly includes
 env.Append(CPPPATH=['.', godot_headers_path, cpp_bindings_path + 'include/', cpp_bindings_path + 'include/core/', cpp_bindings_path + 'include/gen/'])
-env.Append(LIBPATH=[cpp_bindings_path + 'bin/', "."])
+env.Append(LIBPATH=[cpp_bindings_path + 'bin/', "src/bin/osx"])
 env.Append(LIBS=[cpp_library, dep_libs])
 env.Append(LD_LIBRARY_PATH='/Volumes/data/work/zaleos/git/pets/2021Q2/my-game')
 env.Append(LINKFLAGS=[
-    '-Wl,-rpath,@executable_path/../Frameworks'
+   '-Wl,-rpath,@executable_path/../Frameworks'
 ])
 
 
